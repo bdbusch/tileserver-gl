@@ -17,6 +17,7 @@ const getUrlObject = (req) => {
   const urlObject = new URL(`${req.protocol}://${req.headers.host}/`);
   // support overriding hostname by sending X-Forwarded-Host http header
   urlObject.hostname = req.hostname;
+    urlObject.port = '9444';
   return urlObject;
 };
 
